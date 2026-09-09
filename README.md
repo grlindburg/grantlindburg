@@ -6,7 +6,7 @@ Portfolio site for grantlindburg.com. One long-scroll page, "Strata": each caree
 
 Everything on the page comes from `public/data/eras.json`. Edit that file and reload; in development the server re-reads it on every request.
 
-- `person` — name, headline, summary, skills, education, email (hero contact line), `footerEmail` (the address in the footer), profile links.
+- `person` — name, headline, summary, skills, education, email (hero contact line and footer; `footerEmail` overrides the footer if set), profile links.
 - `meta` — page title and description (also used for Open Graph).
 - `eras[]` — one entry per section, newest first. Each has `id`, `dialect` (`ai`, `webgl`, `editorial`, or `terminal`), `years`, `title`, `role`, `org`, `summary`, `projects[]`, and `lesson`.
 - `projects[]` — `title`, `role`, `stack[]`, `outcome`, optional `href`. Set `"placeholder": true` on an era or a project to show a "sample" badge until real content lands.
