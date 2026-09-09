@@ -219,6 +219,7 @@
       "dialect": "editorial",
       "years": "2019 – 2023",
       "title": "Leo Burnett",
+      "logo": { "src": "/assets/leo-burnett.png", "width": 1200, "height": 400 },
       "role": "Interaction Designer",
       "org": "Leo Burnett, Chicago",
       "summary": "Four years inside a global agency, owning UX through implementation: CMS builds, high-fidelity prototypes, and accessible, responsive front-ends for household brands.",

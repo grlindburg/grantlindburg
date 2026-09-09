@@ -149,7 +149,9 @@ async function renderEra(era, i) {
   <div class="era__inner">
     <header class="era__head">
       <p class="era__years">${e(era.years)}</p>
-      <h2 class="era__title" id="era-${e(era.id)}-title">${e(era.title)}</h2>
+      <h2 class="era__title" id="era-${e(era.id)}-title">${era.logo
+        ? `<img class="era__logo" src="${e(era.logo.src)}" alt="${e(era.title)}" width="${e(String(era.logo.width))}" height="${e(String(era.logo.height))}">`
+        : e(era.title)}</h2>
       <p class="era__role">${e(era.role)}</p>
       ${era.org ? `<p class="era__org">${e(era.org)}</p>` : ''}
       <p class="era__summary">${e(era.summary)}</p>
