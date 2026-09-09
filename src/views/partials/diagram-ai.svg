@@ -29,7 +29,7 @@
     </g>
     <g class="ai__node ai__node--soft" style="--d:3.3s">
       <rect x="0" y="182" width="640" height="48" rx="6" stroke-dasharray="3 5"/>
-      <text x="16" y="212" class="ai__meta">memory · context · traces</text>
+      <text x="16" y="224" class="ai__meta">memory · context · traces</text>
     </g>
     <text x="320" y="26" class="ai__meta" text-anchor="middle">human in the loop</text>
   </g>
