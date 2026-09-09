@@ -168,7 +168,7 @@ function renderFooter(site) {
   return `
 <footer class="footer">
   <div class="footer__inner">
-    <p class="footer__cta">Building something that needs true creative systems behind it? Reach out: <a href="mailto:${e(email)}">${e(email)}</a></p>
+    <p class="footer__cta">Building something that needs true creative systems behind it?<br>Reach out: <a href="mailto:${e(email)}">${e(email)}</a></p>
     <nav class="footer__links" aria-label="Profiles">${renderLinks(person.links, 'footer__link')}</nav>
     <p class="footer__meta">${e(person.shortName ?? person.name)}, ${e(person.location ?? '')}. <a href="#top">Back to top</a></p>
   </div>
