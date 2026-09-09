@@ -108,10 +108,20 @@ function renderStack(stack = []) {
   return `<ul class="card__stack" aria-label="Stack">${stack.map((s) => `<li>${e(s)}</li>`).join('')}</ul>`;
 }
 
+// title with individual words linked out, e.g. links: { "Spinach": "https://…" }
+function renderTitleWords(title, links = {}) {
+  let html = e(title);
+  for (const [word, href] of Object.entries(links)) {
+    const a = `<a class="card__word" href="${e(href)}"${/^https?:/.test(href) ? ' rel="noopener"' : ''}>${e(word)}</a>`;
+    html = html.replace(e(word), a);
+  }
+  return html;
+}
+
 function renderCard(p, i) {
   const title = p.href
     ? `<a class="card__link" href="${e(p.href)}"${/^https?:/.test(p.href) ? ' rel="noopener"' : ''}>${e(p.title)}</a>`
-    : e(p.title);
+    : renderTitleWords(p.title, p.links);
   return `
       <li class="card" style="--i:${i}"${p.placeholder ? ' data-placeholder' : ''}>
         ${p.placeholder ? '<span class="card__badge">sample</span>' : ''}

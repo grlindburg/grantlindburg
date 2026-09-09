@@ -226,6 +226,7 @@
       "projects": [
         {
           "title": "Cove and Spinach",
+          "links": { "Spinach": "https://spinachcannabis.com/" },
           "role": "UX through implementation, Cronos Group",
           "stack": [
             "WordPress",
@@ -237,6 +238,7 @@
         },
         {
           "title": "Marlboro.com prototypes",
+          "links": { "Marlboro.com": "https://marlboro.com" },
           "role": "Interaction design",
           "stack": [
             "Figma",

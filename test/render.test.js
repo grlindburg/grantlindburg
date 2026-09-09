@@ -63,3 +63,11 @@ test('the real eras.json is valid', async () => {
   assert.doesNotThrow(() => validateSite(site));
   assert.ok(site.eras.length >= 4);
 });
+
+test('renderPage links single words inside a project title', async () => {
+  const site = minimal();
+  site.eras[0].projects[0].title = 'Cove and Spinach <b>';
+  site.eras[0].projects[0].links = { Spinach: 'https://spinachcannabis.com/?q="x"' };
+  const html = await renderPage(site);
+  assert.match(html, /<h3 class="card__title">Cove and <a class="card__word" href="https:\/\/spinachcannabis\.com\/\?q=&quot;x&quot;" rel="noopener">Spinach<\/a> &lt;b&gt;<\/h3>/);
+});

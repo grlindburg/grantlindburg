@@ -240,6 +240,8 @@ canvas { display: block; }
 .card__link { text-decoration: none; }
 .card__link:hover { text-decoration: underline; }
 .card__link::after { content: ""; position: absolute; inset: 0; }
+.card__word { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.12em; }
+.card__word:hover { text-decoration-thickness: 2px; }
 .card__role { font-size: 0.9rem; color: var(--era-muted); }
 .card__outcome { text-wrap: pretty; }
 .card__stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
