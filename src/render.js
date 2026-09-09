@@ -108,11 +108,16 @@ function renderStack(stack = []) {
   return `<ul class="card__stack" aria-label="Stack">${stack.map((s) => `<li>${e(s)}</li>`).join('')}</ul>`;
 }
 
+// external links inside the eras open in a new tab; in-page anchors stay put
+function ext(href) {
+  return /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : '';
+}
+
 // title with individual words linked out, e.g. links: { "Spinach": "https://…" }
 function renderTitleWords(title, links = {}) {
   let html = e(title);
   for (const [word, href] of Object.entries(links)) {
-    const a = `<a class="card__word" href="${e(href)}"${/^https?:/.test(href) ? ' rel="noopener"' : ''}>${e(word)}</a>`;
+    const a = `<a class="card__word" href="${e(href)}"${ext(href)}>${e(word)}</a>`;
     html = html.replace(e(word), a);
   }
   return html;
@@ -120,7 +125,7 @@ function renderTitleWords(title, links = {}) {
 
 function renderCard(p, i) {
   const title = p.href
-    ? `<a class="card__link" href="${e(p.href)}"${/^https?:/.test(p.href) ? ' rel="noopener"' : ''}>${e(p.title)}</a>`
+    ? `<a class="card__link" href="${e(p.href)}"${ext(p.href)}>${e(p.title)}</a>`
     : renderTitleWords(p.title, p.links);
   return `
       <li class="card" style="--i:${i}"${p.placeholder ? ' data-placeholder' : ''}>
@@ -146,7 +151,7 @@ async function renderDialectExtra(era) {
     const { site, instagram } = era.extras ?? {};
     return `
     <div class="stage" data-stage data-era="${e(era.id)}">
-      <p class="stage__hint">${site ? `<a href="${e(site)}" rel="noopener">Enter the garden ↗</a>` : ''}${instagram ? ` <a href="${e(instagram)}" rel="noopener">Experiments on Instagram ↗</a>` : ''}</p>
+      <p class="stage__hint">${site ? `<a href="${e(site)}"${ext(site)}>Enter the garden ↗</a>` : ''}${instagram ? ` <a href="${e(instagram)}"${ext(instagram)}>Experiments on Instagram ↗</a>` : ''}</p>
     </div>`;
   }
   return '';

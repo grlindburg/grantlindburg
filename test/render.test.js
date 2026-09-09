@@ -69,5 +69,14 @@ test('renderPage links single words inside a project title', async () => {
   site.eras[0].projects[0].title = 'Cove and Spinach <b>';
   site.eras[0].projects[0].links = { Spinach: 'https://spinachcannabis.com/?q="x"' };
   const html = await renderPage(site);
-  assert.match(html, /<h3 class="card__title">Cove and <a class="card__word" href="https:\/\/spinachcannabis\.com\/\?q=&quot;x&quot;" rel="noopener">Spinach<\/a> &lt;b&gt;<\/h3>/);
+  assert.match(html, /<h3 class="card__title">Cove and <a class="card__word" href="https:\/\/spinachcannabis\.com\/\?q=&quot;x&quot;" target="_blank" rel="noopener">Spinach<\/a> &lt;b&gt;<\/h3>/);
+});
+
+test('era links open external hrefs in a new tab but not in-page ones', async () => {
+  const site = minimal();
+  site.eras[0].projects.push({ title: 'Ext', href: 'https://example.com', outcome: 'o' });
+  site.eras[0].projects.push({ title: 'Local', href: '#top', outcome: 'o' });
+  const html = await renderPage(site);
+  assert.match(html, /href="https:\/\/example\.com" target="_blank" rel="noopener"/);
+  assert.match(html, /<a class="card__link" href="#top">Local/);
 });
