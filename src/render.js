@@ -64,7 +64,7 @@ function renderLinks(links, cls) {
 function renderHero(site) {
   const { person, eras } = site;
   const index = eras.map((era) => `
-      <li><a href="#era-${e(era.id)}"><span class="index__years">${e(era.years)}</span><span class="index__title">${e(era.title)}</span></a></li>`).join('');
+      <li data-dialect="${e(era.dialect)}"><a href="#era-${e(era.id)}"><span class="index__years">${e(era.years)}</span><span class="index__title">${e(era.title)}</span></a></li>`).join('');
   return `
 <header class="hero" id="top">
   <div class="hero__inner">
@@ -131,7 +131,8 @@ async function renderEra(era, i) {
     <header class="era__head">
       <p class="era__years">${e(era.years)}</p>
       <h2 class="era__title" id="era-${e(era.id)}-title">${e(era.title)}</h2>
-      <p class="era__role">${e(era.role)}${era.org ? ` <span class="era__org">· ${e(era.org)}</span>` : ''}</p>
+      <p class="era__role">${e(era.role)}</p>
+      ${era.org ? `<p class="era__org">${e(era.org)}</p>` : ''}
       <p class="era__summary">${e(era.summary)}</p>
       ${era.placeholder ? '<p class="era__badge">Sample entries · real projects landing soon</p>' : ''}
     </header>
@@ -150,7 +151,7 @@ function renderFooter(site) {
   <div class="footer__inner">
     <p class="footer__cta">Building something with real systems behind it? <a href="mailto:${e(person.email)}">${e(person.email)}</a></p>
     <nav class="footer__links" aria-label="Profiles">${renderLinks(person.links, 'footer__link')}</nav>
-    <p class="footer__meta">${e(person.name)} · ${e(person.location ?? '')} · <a href="#top">Back to top</a></p>
+    <p class="footer__meta">${e(person.name)}, ${e(person.location ?? '')}. <a href="#top">Back to top</a></p>
   </div>
 </footer>`;
 }
