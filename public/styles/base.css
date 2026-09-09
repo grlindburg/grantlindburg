@@ -71,7 +71,7 @@ canvas { display: block; }
 }
 .hero__inner {
   align-self: center;
-  max-width: 72rem;
+  max-width: 90rem;
   width: 100%;
   padding-block: 4rem 3rem;
 }
@@ -118,7 +118,8 @@ canvas { display: block; }
 .skills dt { font-weight: 600; font-size: 0.95rem; }
 .skills dd { margin: 0; font-size: 0.95rem; line-height: 1.45; color: var(--ink-soft); text-wrap: pretty; }
 @media (min-width: 60rem) {
-  .hero__body { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+  .hero__body { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.25rem 4.5rem; }
+  .hero__summary { max-width: none; }
 }
 
 /* index: in flow on small screens, becomes the core-sample rail on wide ones */
