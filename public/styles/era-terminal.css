@@ -1,0 +1,148 @@
+/* ---------- terminal dialect: 2014–2018, amber phosphor ----------
+   One signature effect: a blinking block caret after the final prompt.
+   Everything else is static text on a faint scanline field. CSS only. */
+
+[data-dialect="terminal"] {
+  --era-bg: var(--strata-terminal);
+  --era-fg: #ffb000;
+  --era-muted: #a8823a;
+  --era-accent: #ffb000;
+  --era-rule: rgba(255, 176, 0, 0.22);
+  --font-display: var(--font-mono);
+  --font-body: var(--font-mono);
+  --card-radius: 0;
+  --card-border: 0;
+  --card-bg: transparent;
+  --term-measure: 88ch;
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+  /* centre the measure with padding so the prompt pseudos left-align with it */
+  padding-inline: max(var(--gutter), (100% - var(--term-measure)) / 2);
+  /* scanline texture: 1px dark line every 3px, barely there */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.16) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+[data-dialect="terminal"] .era__inner { max-width: var(--term-measure); margin: 0; }
+[data-dialect="terminal"] .era__head { max-width: none; }
+
+/* prompt line, rendered from the section's data-prompt attribute */
+[data-dialect="terminal"]::before,
+[data-dialect="terminal"]::after {
+  display: block;
+  width: fit-content;
+  max-width: var(--term-measure);
+  font-family: var(--font-mono);
+  color: var(--era-muted);
+  white-space: pre-wrap;
+}
+[data-dialect="terminal"]::before {
+  content: attr(data-prompt) " cat 2014-2018.log";
+  margin-bottom: 1.75rem;
+}
+[data-dialect="terminal"] ::selection { background: var(--era-fg); color: var(--era-bg); }
+
+/* head */
+[data-dialect="terminal"] .era__years {
+  font-size: inherit;
+  color: var(--era-muted);
+}
+[data-dialect="terminal"] .era__years::before { content: "# "; }
+[data-dialect="terminal"] .era__title {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin-top: 0.25rem;
+}
+[data-dialect="terminal"] .era__role { margin-top: 1rem; font-weight: 400; }
+[data-dialect="terminal"] .era__summary { font-size: inherit; margin-top: 1rem; max-width: 70ch; }
+[data-dialect="terminal"] .era__badge {
+  border-radius: 0; border-style: solid; border-color: var(--era-rule);
+  font-size: inherit; padding: 0.15rem 0.5rem;
+}
+
+/* cards become log lines: single column, hairline rules, no boxes */
+[data-dialect="terminal"] .cards {
+  display: block;
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--era-rule);
+}
+[data-dialect="terminal"] .card {
+  display: block;
+  padding: 0.85rem 0 0.85rem 2ch;
+  text-indent: -2ch; /* hanging indent: wrapped title lines align with the outcome */
+  border-bottom: 1px solid var(--era-rule);
+}
+[data-dialect="terminal"] .card__badge {
+  position: static; display: inline; padding: 0; border: 0;
+  font-size: inherit; color: var(--era-muted);
+}
+[data-dialect="terminal"] .card__badge::before { content: "[ "; }
+[data-dialect="terminal"] .card__badge::after { content: " ] "; }
+[data-dialect="terminal"] .card__title {
+  display: inline;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  padding: 0;
+}
+[data-dialect="terminal"] .card__title::before { content: "> "; color: var(--era-muted); }
+[data-dialect="terminal"] .card__role {
+  display: inline;
+  font-size: inherit;
+  color: var(--era-muted);
+}
+[data-dialect="terminal"] .card__role::before { content: " — "; white-space: pre; }
+[data-dialect="terminal"] .card__outcome {
+  margin-top: 0.15rem;
+  text-indent: 0;
+  max-width: 72ch;
+}
+[data-dialect="terminal"] .card__stack {
+  gap: 0 1ch;
+  margin-top: 0.15rem;
+  text-indent: 0;
+}
+[data-dialect="terminal"] .card__stack li {
+  padding: 0; border: 0; border-radius: 0;
+  font-size: inherit; color: var(--era-muted);
+}
+[data-dialect="terminal"] .card__stack li::before { content: "["; }
+[data-dialect="terminal"] .card__stack li::after { content: "]"; }
+
+/* the final output line */
+[data-dialect="terminal"] .era__lesson {
+  max-width: 72ch;
+  margin-top: 2.25rem;
+  padding-top: 0;
+  border-top: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+[data-dialect="terminal"] .era__lesson-label {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+[data-dialect="terminal"] .era__lesson-label::before { content: "# "; }
+
+/* new prompt + block caret. Solid by default; blinks only while on screen. */
+[data-dialect="terminal"]::after {
+  content: attr(data-prompt) " ";
+  margin-top: 2.25rem;
+}
+/* the caret is a border so the prompt text itself never blinks */
+[data-dialect="terminal"]::after {
+  border-right: 0.6em solid var(--era-fg);
+}
+@keyframes term-caret {
+  from { border-right-color: transparent; }
+  to   { border-right-color: var(--era-fg); }
+}
+[data-dialect="terminal"].is-live::after {
+  animation: term-caret 1.1s steps(2, jump-none) infinite;
+}
