@@ -1,0 +1,185 @@
+{
+  "person": {
+    "name": "Grant Lindburg",
+    "tagline": "Systems engineer with a designer's hands. Twelve years across backend, agency interaction design, WebGL, and now agentic AI.",
+    "jobTitle": "Head of Web/Dev, Published Studios",
+    "location": "Chicago, IL",
+    "email": "grant@publishedstudios.com",
+    "url": "https://grantlindburg.com",
+    "links": [
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/grant-lindburg-59b07026/" },
+      { "label": "billniacin.com", "href": "https://billniacin.com/" },
+      { "label": "Instagram", "href": "https://www.instagram.com/billniacin/" },
+      { "label": "GitHub", "href": "https://github.com/grlindburg" }
+    ]
+  },
+  "meta": {
+    "title": "Grant Lindburg — Engineer, Chicago",
+    "description": "Grant Lindburg builds AI systems, 3D web experiences, and the architecture underneath them. Twelve years of work, shown era by era."
+  },
+  "eras": [
+    {
+      "id": "ai",
+      "dialect": "ai",
+      "years": "2024 →",
+      "title": "AI Systems",
+      "role": "Architect & builder",
+      "org": "Published Studios / independent",
+      "summary": "Agentic pipelines, tool-using assistants, and an engineering practice where the model is a collaborator in planning, building, and review.",
+      "placeholder": true,
+      "projects": [
+        {
+          "title": "Agentic research pipeline",
+          "role": "Architecture, orchestration",
+          "stack": ["Claude API", "MCP", "Node", "Postgres"],
+          "outcome": "Planner/executor agents with tool use and an eval harness. Sample entry: swap in a real project.",
+          "href": "#era-ai",
+          "placeholder": true
+        },
+        {
+          "title": "Generative shader studies",
+          "role": "Design, GLSL",
+          "stack": ["WebGL", "GLSL", "body tracking"],
+          "outcome": "Real-time GPU experiments with live parameter overlays, published as short studies.",
+          "href": "https://www.instagram.com/billniacin/"
+        },
+        {
+          "title": "AI-assisted engineering practice",
+          "role": "Process, tooling",
+          "stack": ["Claude Code", "spec-driven planning", "Docker", "Caddy"],
+          "outcome": "This site: brainstormed, specced, and shipped test-first with an AI collaborator. Source is public.",
+          "href": "https://github.com/grlindburg/grantlindburg"
+        }
+      ],
+      "lesson": "The architecture is the prompt. Boundaries, contracts, and evals matter more than the model.",
+      "extras": {
+        "log": [
+          "plan    › decompose task into 4 steps",
+          "tool    › search(repo) → 12 hits",
+          "agent   › draft v1 · 412 tokens",
+          "eval    › 9/10 pass · retry step 3",
+          "review  › approved",
+          "commit  › ship"
+        ]
+      }
+    },
+    {
+      "id": "webgl",
+      "dialect": "webgl",
+      "years": "2022 →",
+      "title": "Published Studios & Bill Niacin",
+      "role": "Head of Web/Dev",
+      "org": "Published Studios · Chicago",
+      "summary": "Leading a small team of self-taught developers building sites for artists, brands, and Chicago businesses. Under the Bill Niacin name: 3D, WebGL, and interactive work where the code is part of the art.",
+      "projects": [
+        {
+          "title": "Bill's Happy Place",
+          "role": "Concept, 3D, build",
+          "stack": ["Three.js", "WebGL", "shaders", "audio"],
+          "outcome": "A living-garden portfolio: zoom from an aerial garden out to a globe with client sites orbiting as portals.",
+          "href": "https://billniacin.com/"
+        },
+        {
+          "title": "We Real Cool (For School)",
+          "role": "Design, build",
+          "stack": ["storefront"],
+          "outcome": "Apparel storefront for a Chicago label.",
+          "href": "https://billniacin.com/"
+        },
+        {
+          "title": "Sydney Jackson",
+          "role": "Design, build",
+          "stack": ["portfolio"],
+          "outcome": "Artist portfolio with an editorial, photo-first layout.",
+          "href": "https://billniacin.com/"
+        },
+        {
+          "title": "DRAMA",
+          "role": "Design, build",
+          "stack": ["storefront"],
+          "outcome": "Minimal apparel shop with product-forward grid.",
+          "href": "https://billniacin.com/"
+        },
+        {
+          "title": "ember.",
+          "role": "Design, build",
+          "stack": ["booking"],
+          "outcome": "Booking site for a sauna on the Chicago Riverwalk.",
+          "href": "https://billniacin.com/"
+        }
+      ],
+      "lesson": "Delight is a performance budget. Every effect has to earn its frame.",
+      "extras": {
+        "site": "https://billniacin.com/",
+        "instagram": "https://www.instagram.com/billniacin/"
+      }
+    },
+    {
+      "id": "agency",
+      "dialect": "editorial",
+      "years": "2019 – 2022",
+      "title": "Leo Burnett",
+      "role": "Interaction Designer",
+      "org": "Leo Burnett · Chicago",
+      "summary": "Three years inside a global agency: prototypes, motion, and production front-ends for household brands, where the craft is making the polished thing feel effortless.",
+      "projects": [
+        {
+          "title": "Campaign front-ends",
+          "role": "Interaction design, build",
+          "stack": ["JavaScript", "motion", "responsive"],
+          "outcome": "Prototype-to-production sites and microsites for brand campaigns."
+        },
+        {
+          "title": "Interactive prototypes",
+          "role": "Prototyping",
+          "stack": ["rapid prototyping", "user testing"],
+          "outcome": "Clickable concepts for pitches and testing: the fastest path from an idea to something in hand."
+        },
+        {
+          "title": "Motion & micro-interaction",
+          "role": "Motion design",
+          "stack": ["CSS", "WebGL", "timing"],
+          "outcome": "Transitions and feedback that explain state instead of decorating it."
+        }
+      ],
+      "lesson": "Restraint reads as confidence. Motion should explain, not decorate."
+    },
+    {
+      "id": "fullstack",
+      "dialect": "terminal",
+      "years": "2014 – 2018",
+      "title": "Early Full-Stack",
+      "role": "Backend → creative full-stack",
+      "org": "Contracts, startups, freelance",
+      "summary": "Learning systems the hard way: APIs, databases, deploys, and the first sites that tried to be more than pages.",
+      "projects": [
+        {
+          "title": "clusterFlunk",
+          "role": "Backend Developer · contract · 2014–15",
+          "stack": ["API", "database", "auth"],
+          "outcome": "Backend services for a student study-group startup out of Iowa."
+        },
+        {
+          "title": "Lyrical Labs",
+          "role": "Software Engineer · 2016–17",
+          "stack": ["product engineering", "web app"],
+          "outcome": "Product features for a startup building AI-assisted songwriting tools."
+        },
+        {
+          "title": "Haight Brand",
+          "role": "Creative Full-stack Developer · 2017–18",
+          "stack": ["full-stack", "brand site"],
+          "outcome": "Creative full-stack work for a Chicago brand studio."
+        },
+        {
+          "title": "Bill Niacin, freelance",
+          "role": "Freelance Developer · 2014–22",
+          "stack": ["sites", "storefronts", "experiments"],
+          "outcome": "Web builds for artists and small businesses in Chicago, and the first WebGL experiments."
+        }
+      ],
+      "lesson": "Everything is a queue, a cache, or a contract. Name them early.",
+      "extras": { "prompt": "grant@chi ~ $" }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><!--slot:title--></title>
+  <meta name="description" content="<!--slot:description-->">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="<!--slot:title-->">
+  <meta property="og:description" content="<!--slot:description-->">
+  <meta property="og:url" content="<!--slot:url-->">
+  <meta name="theme-color" content="#0b0b0e">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="<!--slot:url-->">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.min.js"}}
+  </script>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/era-ai.css">
+  <link rel="stylesheet" href="/styles/era-webgl.css">
+  <link rel="stylesheet" href="/styles/era-editorial.css">
+  <link rel="stylesheet" href="/styles/era-terminal.css">
+  <script type="application/ld+json"><!--slot:jsonld--></script>
+</head>
+<body>
+  <a class="skip" href="#era-ai">Skip to work</a>
+<!--slot:hero-->
+  <main class="strata">
+<!--slot:eras-->
+  </main>
+<!--slot:footer-->
+  <script type="application/json" id="site-data"><!--slot:data--></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
