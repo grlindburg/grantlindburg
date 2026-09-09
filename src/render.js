@@ -58,7 +58,7 @@ async function partial(name) {
 }
 
 function renderLinks(links, cls) {
-  return links.map((l) => `<a class="${cls}" href="${e(l.href)}" rel="me noopener">${e(l.label)}</a>`).join('\n');
+  return links.map((l) => `<a class="${cls}" href="${e(l.href)}"${ext(l.href, 'me')}>${e(l.label)}</a>`).join('\n');
 }
 
 function renderHero(site) {
@@ -68,7 +68,7 @@ function renderHero(site) {
   const contact = [
     person.location ? `<li>${e(person.location)}</li>` : '',
     `<li><a href="mailto:${e(person.email)}">${e(person.email)}</a></li>`,
-    ...person.links.map((l) => `<li><a href="${e(l.href)}" rel="me noopener">${e(l.label)}</a></li>`),
+    ...person.links.map((l) => `<li><a href="${e(l.href)}"${ext(l.href, 'me')}>${e(l.label)}</a></li>`),
   ].join('\n      ');
   const skills = (person.skills ?? []).map((g) => `
         <div class="skills__group">
@@ -108,9 +108,11 @@ function renderStack(stack = []) {
   return `<ul class="card__stack" aria-label="Stack">${stack.map((s) => `<li>${e(s)}</li>`).join('')}</ul>`;
 }
 
-// external links inside the eras open in a new tab; in-page anchors stay put
-function ext(href) {
-  return /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : '';
+// external links open in a new tab; in-page, mailto and other local hrefs stay put.
+// `rel` adds extra rel tokens (e.g. "me" on profile links).
+function ext(href, rel = '') {
+  if (!/^https?:/.test(href)) return rel ? ` rel="${rel}"` : '';
+  return ` target="_blank" rel="${[rel, 'noopener'].filter(Boolean).join(' ')}"`;
 }
 
 // title with individual words linked out, e.g. links: { "Spinach": "https://…" }

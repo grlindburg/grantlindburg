@@ -80,3 +80,12 @@ test('era links open external hrefs in a new tab but not in-page ones', async ()
   assert.match(html, /href="https:\/\/example\.com" target="_blank" rel="noopener"/);
   assert.match(html, /<a class="card__link" href="#top">Local/);
 });
+
+test('hero and footer profile links open in a new tab and keep rel="me"', async () => {
+  const site = minimal();
+  site.person.links = [{ label: 'GitHub', href: 'https://github.com/x' }];
+  const html = await renderPage(site);
+  const hits = html.match(/href="https:\/\/github\.com\/x" target="_blank" rel="me noopener"/g) ?? [];
+  assert.equal(hits.length, 2, 'hero contact list and footer');
+  assert.doesNotMatch(html, /mailto:[^"]*" target=/);
+});
