@@ -64,7 +64,7 @@ function renderLinks(links, cls) {
 function renderHero(site) {
   const { person, eras } = site;
   const index = eras.map((era) => `
-      <li data-dialect="${e(era.dialect)}"><a href="#era-${e(era.id)}"><span class="index__years">${e(era.years)}</span><span class="index__title">${e(era.title)}</span></a></li>`).join('');
+      <li data-strata="${e(era.dialect)}"><a href="#era-${e(era.id)}"><span class="index__years">${e(era.years)}</span><span class="index__title">${e(era.title)}</span></a></li>`).join('');
   return `
 <header class="hero" id="top">
   <div class="hero__inner">
