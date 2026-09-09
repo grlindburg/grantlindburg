@@ -1,0 +1,10 @@
+# Caddy obtains and renews Let's Encrypt certificates automatically.
+# Point A/AAAA records for grantlindburg.com and www to the droplet first.
+grantlindburg.com {
+    encode gzip zstd
+    reverse_proxy app:3000
+}
+
+www.grantlindburg.com {
+    redir https://grantlindburg.com{uri} permanent
+}
