@@ -96,7 +96,8 @@ function renderHero(site) {
   </div>
   <nav class="index" aria-label="Eras">
     <p class="index__label">Experience, newest first</p>
-    <ol class="index__list">${index}
+    <ol class="index__list">
+      <li class="index__home" data-strata="home"><a href="#top"><span class="index__years">GRL →</span><span class="index__title">${e(person.name)}</span></a></li>${index}
     </ol>
   </nav>
 </header>`;

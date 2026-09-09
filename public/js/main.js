@@ -6,6 +6,7 @@ const site = (() => {
 })();
 
 const eras = [...document.querySelectorAll('.era')];
+const sections = [document.getElementById('top'), ...eras].filter(Boolean);
 const indexLinks = new Map(
   [...document.querySelectorAll('.index__list a')].map((a) => [a.getAttribute('href').slice(1), a]),
 );
@@ -22,7 +23,7 @@ if ('IntersectionObserver' in window) {
       else a.removeAttribute('aria-current');
     }
   }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
-  eras.forEach((el) => io.observe(el));
+  sections.forEach((el) => io.observe(el));
 }
 
 // Per-era "live" flag: dialect sheets only run their animations while on screen.

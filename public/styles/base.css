@@ -147,6 +147,7 @@ canvas { display: block; }
 .index__list li[data-strata="editorial"] { --dot: var(--strata-editorial); box-shadow: none; }
 .index__list li[data-strata="editorial"]::before { border: 1px solid var(--ink); }
 .index__list li[data-strata="terminal"] { --dot: var(--strata-terminal); }
+.index__home { display: none; --dot: var(--ink); }
 
 @media (min-width: 60rem) {
   :root { --rail: 3.5rem; }
@@ -162,6 +163,7 @@ canvas { display: block; }
   }
   .index__list { display: grid; grid-auto-rows: 1fr; height: 100%; gap: 0; }
   .index__list li { padding: 0; }
+  .index__home { display: block; }
   .index__list li::before { display: none; }
   .index__list a {
     display: grid; grid-template-columns: none; place-items: center; height: 100%; padding: 0;
