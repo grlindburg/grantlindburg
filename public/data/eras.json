@@ -1,21 +1,96 @@
 {
   "person": {
-    "name": "Grant Lindburg",
-    "tagline": "Systems engineer with a designer's hands. Twelve years across backend, agency interaction design, WebGL, and now agentic AI.",
-    "jobTitle": "Head of Web/Dev, Published Studios",
+    "name": "Grant Russell Lindburg",
+    "jobTitle": "Head of Design & Development, Published Studios",
     "location": "Chicago, IL",
-    "email": "grant@publishedstudios.com",
+    "email": "grlindburg@gmail.com",
     "url": "https://grantlindburg.com",
     "links": [
-      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/grant-lindburg-59b07026/" },
-      { "label": "billniacin.com", "href": "https://billniacin.com/" },
-      { "label": "Instagram", "href": "https://www.instagram.com/billniacin/" },
-      { "label": "GitHub", "href": "https://github.com/grlindburg" }
-    ]
+      {
+        "label": "Portfolio",
+        "href": "https://billniacin.com/"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/grant-lindburg-59b07026/"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/billniacin/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/grlindburg"
+      }
+    ],
+    "shortName": "Grant Lindburg",
+    "title": "Design Engineer, web and AI-assisted development",
+    "summary": "Ten-plus years at the intersection of design and engineering: turning design vision into production-ready, responsive web experiences in React and closing the design-to-development gap for creative and enterprise brands. Strong in design systems, rapid prototyping from concept to production, interaction and motion design, typography, and accessibility. An early adopter of agentic AI who architected Claude-powered internal and creative tooling the team came to depend on, cutting delivery timelines by 52%.",
+    "skills": [
+      {
+        "label": "Design engineering",
+        "items": [
+          "Design to development handoff",
+          "Design systems and component libraries",
+          "Rapid prototyping, concept to production",
+          "Interaction and motion design",
+          "Typography",
+          "Responsive UI",
+          "Accessibility (WCAG)"
+        ]
+      },
+      {
+        "label": "Frontend",
+        "items": [
+          "React",
+          "JavaScript",
+          "HTML and CSS",
+          "Three.js",
+          "WordPress content modeling and templates",
+          "Front-end performance",
+          "Python"
+        ]
+      },
+      {
+        "label": "AI and creative tooling",
+        "items": [
+          "Claude and Claude Code",
+          "Cursor",
+          "AI-powered internal and creative tooling",
+          "Workflow automation with n8n",
+          "Midjourney, DALL·E, Stable Diffusion",
+          "ElevenLabs",
+          "Prompt engineering"
+        ]
+      },
+      {
+        "label": "Design",
+        "items": [
+          "Figma",
+          "After Effects and XD",
+          "Wireframing",
+          "Usability testing"
+        ]
+      },
+      {
+        "label": "Leadership",
+        "items": [
+          "Technical direction",
+          "Mentorship",
+          "Cross-functional collaboration",
+          "Design-to-delivery ownership"
+        ]
+      }
+    ],
+    "education": {
+      "degree": "B.S. Computer Science",
+      "school": "University of Iowa",
+      "years": "2010 – 2014"
+    }
   },
   "meta": {
-    "title": "Grant Lindburg — Engineer, Chicago",
-    "description": "Grant Lindburg builds AI systems, 3D web experiences, and the architecture underneath them. Twelve years of work, shown era by era."
+    "title": "Grant Lindburg — Design Engineer, Chicago",
+    "description": "Grant Lindburg is a design engineer in Chicago building AI-assisted tooling, React front-ends, and 3D web experiences. Ten-plus years of work, shown era by era."
   },
   "eras": [
     {
@@ -23,30 +98,42 @@
       "dialect": "ai",
       "years": "2024 →",
       "title": "AI Systems",
-      "role": "Architect & builder",
-      "org": "Published Studios / independent",
+      "role": "Architect and builder",
+      "org": "Published Studios and independent",
       "summary": "Agentic pipelines, tool-using assistants, and an engineering practice where the model is a collaborator in planning, building, and review.",
-      "placeholder": true,
       "projects": [
         {
-          "title": "Agentic research pipeline",
-          "role": "Architecture, orchestration",
-          "stack": ["Claude API", "MCP", "Node", "Postgres"],
-          "outcome": "Planner/executor agents with tool use and an eval harness. Sample entry: swap in a real project.",
-          "href": "#era-ai",
-          "placeholder": true
+          "title": "Studio design-to-production tooling",
+          "role": "Architecture, integration",
+          "stack": [
+            "Claude",
+            "Claude Code",
+            "Cursor",
+            "n8n"
+          ],
+          "outcome": "AI-powered internal and creative tooling wired into Published Studios' design-to-production workflow. The team came to depend on it; delivery timelines fell 52%.",
+          "href": "#era-webgl"
         },
         {
           "title": "Generative shader studies",
           "role": "Design, GLSL",
-          "stack": ["WebGL", "GLSL", "body tracking"],
+          "stack": [
+            "WebGL",
+            "GLSL",
+            "body tracking"
+          ],
           "outcome": "Real-time GPU experiments with live parameter overlays, published as short studies.",
           "href": "https://www.instagram.com/billniacin/"
         },
         {
           "title": "AI-assisted engineering practice",
           "role": "Process, tooling",
-          "stack": ["Claude Code", "spec-driven planning", "Docker", "Caddy"],
+          "stack": [
+            "Claude Code",
+            "spec-driven planning",
+            "Docker",
+            "Caddy"
+          ],
           "outcome": "This site: brainstormed, specced, and shipped test-first with an AI collaborator. Source is public.",
           "href": "https://github.com/grlindburg/grantlindburg"
         }
@@ -66,44 +153,57 @@
     {
       "id": "webgl",
       "dialect": "webgl",
-      "years": "2022 →",
+      "years": "2023 →",
       "title": "Published Studios & Bill Niacin",
-      "role": "Head of Web/Dev",
-      "org": "Published Studios · Chicago",
-      "summary": "Leading a small team of self-taught developers building sites for artists, brands, and Chicago businesses. Under the Bill Niacin name: 3D, WebGL, and interactive work where the code is part of the art.",
+      "role": "Head of Design & Development",
+      "org": "Published Studios, Chicago",
+      "summary": "Owning architecture and implementation of client web properties end to end, from design-system code and templates to interactive experiences, shipping in React for clients including Jeff Hamilton, Joe Freshgoods, and TDE. Under the Bill Niacin name: 3D, WebGL, and interactive work where the code is part of the art.",
       "projects": [
         {
           "title": "Bill's Happy Place",
           "role": "Concept, 3D, build",
-          "stack": ["Three.js", "WebGL", "shaders", "audio"],
+          "stack": [
+            "Three.js",
+            "WebGL",
+            "shaders",
+            "audio"
+          ],
           "outcome": "A living-garden portfolio: zoom from an aerial garden out to a globe with client sites orbiting as portals.",
           "href": "https://billniacin.com/"
         },
         {
           "title": "We Real Cool (For School)",
           "role": "Design, build",
-          "stack": ["storefront"],
+          "stack": [
+            "storefront"
+          ],
           "outcome": "Apparel storefront for a Chicago label.",
           "href": "https://billniacin.com/"
         },
         {
           "title": "Sydney Jackson",
           "role": "Design, build",
-          "stack": ["portfolio"],
+          "stack": [
+            "portfolio"
+          ],
           "outcome": "Artist portfolio with an editorial, photo-first layout.",
           "href": "https://billniacin.com/"
         },
         {
           "title": "DRAMA",
           "role": "Design, build",
-          "stack": ["storefront"],
+          "stack": [
+            "storefront"
+          ],
           "outcome": "Minimal apparel shop with product-forward grid.",
           "href": "https://billniacin.com/"
         },
         {
           "title": "ember.",
           "role": "Design, build",
-          "stack": ["booking"],
+          "stack": [
+            "booking"
+          ],
           "outcome": "Booking site for a sauna on the Chicago Riverwalk.",
           "href": "https://billniacin.com/"
         }
@@ -117,29 +217,42 @@
     {
       "id": "agency",
       "dialect": "editorial",
-      "years": "2019 – 2022",
+      "years": "2019 – 2023",
       "title": "Leo Burnett",
       "role": "Interaction Designer",
-      "org": "Leo Burnett · Chicago",
-      "summary": "Three years inside a global agency: prototypes, motion, and production front-ends for household brands, where the craft is making the polished thing feel effortless.",
+      "org": "Leo Burnett, Chicago",
+      "summary": "Four years inside a global agency, owning UX through implementation: CMS builds, high-fidelity prototypes, and accessible, responsive front-ends for household brands.",
       "projects": [
         {
-          "title": "Campaign front-ends",
-          "role": "Interaction design, build",
-          "stack": ["JavaScript", "motion", "responsive"],
-          "outcome": "Prototype-to-production sites and microsites for brand campaigns."
+          "title": "Cove and Spinach",
+          "role": "UX through implementation, Cronos Group",
+          "stack": [
+            "WordPress",
+            "content modeling",
+            "page templates",
+            "responsive front-end"
+          ],
+          "outcome": "Two full-scale CMS sites: content modeling, page templates, responsive front-end, and editorial workflows."
         },
         {
-          "title": "Interactive prototypes",
-          "role": "Prototyping",
-          "stack": ["rapid prototyping", "user testing"],
-          "outcome": "Clickable concepts for pitches and testing: the fastest path from an idea to something in hand."
+          "title": "Marlboro.com prototypes",
+          "role": "Interaction design",
+          "stack": [
+            "Figma",
+            "Adobe XD",
+            "rapid prototyping"
+          ],
+          "outcome": "High-fidelity interactive prototypes, taken from concept through production-ready UI."
         },
         {
-          "title": "Motion & micro-interaction",
-          "role": "Motion design",
-          "stack": ["CSS", "WebGL", "timing"],
-          "outcome": "Transitions and feedback that explain state instead of decorating it."
+          "title": "Research-led prototyping",
+          "role": "With strategists and researchers",
+          "stack": [
+            "usability testing",
+            "accessibility",
+            "motion"
+          ],
+          "outcome": "Prototype, usability-test, and ship accessible, responsive digital experiences."
         }
       ],
       "lesson": "Restraint reads as confidence. Motion should explain, not decorate."
@@ -156,30 +269,47 @@
         {
           "title": "clusterFlunk",
           "role": "Backend Developer · contract · 2014–15",
-          "stack": ["API", "database", "auth"],
+          "stack": [
+            "API",
+            "database",
+            "auth"
+          ],
           "outcome": "Backend services for a student study-group startup out of Iowa."
         },
         {
           "title": "Lyrical Labs",
           "role": "Software Engineer · 2016–17",
-          "stack": ["product engineering", "web app"],
-          "outcome": "Product features for a startup building AI-assisted songwriting tools."
+          "stack": [
+            "UI components",
+            "design-system specs",
+            "responsive front-end"
+          ],
+          "outcome": "Reusable UI components and modules built to design-system specs, translating designs into responsive, production-ready front-end."
         },
         {
           "title": "Haight Brand",
           "role": "Creative Full-stack Developer · 2017–18",
-          "stack": ["full-stack", "brand site"],
+          "stack": [
+            "full-stack",
+            "brand site"
+          ],
           "outcome": "Creative full-stack work for a Chicago brand studio."
         },
         {
           "title": "Bill Niacin, freelance",
           "role": "Freelance Developer · 2014–22",
-          "stack": ["sites", "storefronts", "experiments"],
+          "stack": [
+            "sites",
+            "storefronts",
+            "experiments"
+          ],
           "outcome": "Web builds for artists and small businesses in Chicago, and the first WebGL experiments."
         }
       ],
       "lesson": "Everything is a queue, a cache, or a contract. Name them early.",
-      "extras": { "prompt": "grant@chi ~ $" }
+      "extras": {
+        "prompt": "grant@chi ~ $"
+      }
     }
   ]
 }

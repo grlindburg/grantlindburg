@@ -24,6 +24,8 @@ test('GET / serves the rendered home page', async () => {
     assert.match(html, new RegExp(`id="era-${era.id}"`), `era ${era.id} rendered`);
     assert.ok(html.includes(era.title), `era title "${era.title}" rendered`);
   }
+  for (const group of site.person.skills) assert.ok(html.includes(group.label), `skill group "${group.label}"`);
+  assert.ok(html.includes(site.person.education.school), 'education rendered');
   assert.match(html, /<script type="application\/ld\+json">/);
   assert.match(html, /property="og:title"/);
   assert.match(html, /id="site-data"/);
@@ -34,7 +36,7 @@ test('GET /data/eras.json serves the content file', async () => {
   assert.equal(res.status, 200);
   assert.match(res.headers.get('content-type'), /application\/json/);
   const body = await res.json();
-  assert.equal(body.person.name, 'Grant Lindburg');
+  assert.match(body.person.name, /Grant .*Lindburg/);
 });
 
 test('unknown path returns the 404 page', async () => {

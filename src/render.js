@@ -65,19 +65,37 @@ function renderHero(site) {
   const { person, eras } = site;
   const index = eras.map((era) => `
       <li data-strata="${e(era.dialect)}"><a href="#era-${e(era.id)}"><span class="index__years">${e(era.years)}</span><span class="index__title">${e(era.title)}</span></a></li>`).join('');
+  const contact = [
+    person.location ? `<li>${e(person.location)}</li>` : '',
+    `<li><a href="mailto:${e(person.email)}">${e(person.email)}</a></li>`,
+    ...person.links.map((l) => `<li><a href="${e(l.href)}" rel="me noopener">${e(l.label)}</a></li>`),
+  ].join('\n      ');
+  const skills = (person.skills ?? []).map((g) => `
+        <div class="skills__group">
+          <dt>${e(g.label)}</dt>
+          <dd>${g.items.map(e).join(', ')}</dd>
+        </div>`).join('');
+  const edu = person.education;
   return `
 <header class="hero" id="top">
   <div class="hero__inner">
-    <p class="hero__kicker">${e(person.jobTitle)}${person.location ? ` · ${e(person.location)}` : ''}</p>
     <h1 class="hero__name">${e(person.name)}</h1>
-    <p class="hero__tagline">${e(person.tagline)}</p>
-    <nav class="hero__links" aria-label="Profiles">
-      ${renderLinks(person.links, 'hero__link')}
-      <a class="hero__link" href="mailto:${e(person.email)}">Email</a>
-    </nav>
+    ${person.title ? `<p class="hero__title">${e(person.title)}</p>` : ''}
+    <ul class="hero__contact" aria-label="Contact">
+      ${contact}
+    </ul>
+    <div class="hero__body">
+      <div class="hero__summary">
+        ${person.summary ? `<p>${e(person.summary)}</p>` : ''}
+        ${person.jobTitle ? `<p class="hero__now">Currently ${e(person.jobTitle)}.</p>` : ''}
+        ${edu ? `<p class="hero__education">${e(edu.degree)}, ${e(edu.school)}, ${e(edu.years)}.</p>` : ''}
+      </div>
+      ${skills ? `<dl class="skills">${skills}
+      </dl>` : ''}
+    </div>
   </div>
   <nav class="index" aria-label="Eras">
-    <p class="index__label">Twelve years, newest first</p>
+    <p class="index__label">Experience, newest first</p>
     <ol class="index__list">${index}
     </ol>
   </nav>
@@ -151,7 +169,7 @@ function renderFooter(site) {
   <div class="footer__inner">
     <p class="footer__cta">Building something with real systems behind it? <a href="mailto:${e(person.email)}">${e(person.email)}</a></p>
     <nav class="footer__links" aria-label="Profiles">${renderLinks(person.links, 'footer__link')}</nav>
-    <p class="footer__meta">${e(person.name)}, ${e(person.location ?? '')}. <a href="#top">Back to top</a></p>
+    <p class="footer__meta">${e(person.shortName ?? person.name)}, ${e(person.location ?? '')}. <a href="#top">Back to top</a></p>
   </div>
 </footer>`;
 }
