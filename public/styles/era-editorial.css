@@ -1,15 +1,15 @@
 /* ---------- editorial dialect: 2019–2022, Leo Burnett ----------
-   White page, ink type, one red: the years, set as a numeral block.
+   Bone page, ink type, one red: the years, set as a numeral block.
    One signature effect: a single settle-in of the numerals and title when
    main.js adds .is-visible. Nothing is hidden by default, so JS off and
    reduced motion both land on the finished layout. */
 
 [data-dialect="editorial"] {
   --era-bg: var(--strata-editorial);
-  --era-fg: #111111;
-  --era-muted: #5a5a5a;
-  --era-accent: #d62b1f;
-  --era-rule: #dcdcdc;
+  --era-fg: var(--strata-editorial-fg);
+  --era-muted: #5e544a;
+  --era-accent: #c8261b;
+  --era-rule: #d6c8a8;
   --font-display: var(--font-serif);
   --font-body: var(--font-sans);
   --card-radius: 0;

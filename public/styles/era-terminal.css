@@ -1,12 +1,12 @@
-/* ---------- terminal dialect: 2014–2018, amber phosphor ----------
+/* ---------- terminal dialect: 2014–2018, amber phosphor on true black ----------
    One signature effect: a blinking block caret after the final prompt.
    Everything else is static text on a faint scanline field. CSS only. */
 
 [data-dialect="terminal"] {
   --era-bg: var(--strata-terminal);
-  --era-fg: #ffb000;
+  --era-fg: var(--strata-terminal-fg);
   --era-muted: #a8823a;
-  --era-accent: #ffb000;
+  --era-accent: var(--strata-terminal-fg);
   --era-rule: rgba(255, 176, 0, 0.22);
   --font-display: var(--font-mono);
   --font-body: var(--font-mono);
@@ -19,10 +19,10 @@
   line-height: 1.6;
   /* centre the measure with padding so the prompt pseudos left-align with it */
   padding-inline: max(var(--gutter), (100% - var(--term-measure)) / 2);
-  /* scanline texture: 1px dark line every 3px, barely there */
+  /* scanline texture: 1px amber line every 3px, barely there */
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.16) 0 1px,
+    rgba(255, 176, 0, 0.05) 0 1px,
     transparent 1px 3px
   );
 }

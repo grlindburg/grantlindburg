@@ -1,23 +1,23 @@
 /* ==========================================================================
    AI Systems dialect (2024 →)
-   Deep blue-black, mono metadata, one figure: the agent loop.
+   Ultramarine, mono metadata, one figure: the agent loop.
    Signature effect: a single trace runs around the loop while the era is live.
    ========================================================================== */
 
 [data-dialect="ai"] {
-  --era-bg: #0b0f14;
-  --era-fg: #dfeaf3;
-  --era-muted: #8ea3b5;
-  --era-accent: #7ad0ff;
-  --era-rule: #27333f;
+  --era-bg: var(--strata-ai);
+  --era-fg: var(--strata-ai-fg);
+  --era-muted: #b3bdf5;
+  --era-accent: #8ef0ff;
+  --era-rule: rgba(238, 241, 255, 0.24);
   --font-display: var(--font-serif);
   --font-body: var(--font-sans);
   --card-radius: 2px;
   --card-border: 1px solid var(--era-rule);
-  --card-bg: #0d1219;
+  --card-bg: #1121a0;
 
-  --ai-node-bg: #0e141b;
-  --ai-node-hot: rgba(122, 208, 255, 0.09);
+  --ai-node-bg: #0f1e96;
+  --ai-node-hot: rgba(142, 240, 255, 0.16);
   --ai-cycle: 5.5s;
 }
 
@@ -88,7 +88,7 @@
   font-family: var(--font-mono);
   font-size: 0.85rem;
   line-height: 1.75;
-  color: #b7c7d5;
+  color: #cdd5fb;
 }
 [data-dialect="ai"] .ai__log li { white-space: pre-wrap; overflow-wrap: anywhere; }
 [data-dialect="ai"] .ai__log li:last-child { color: var(--era-accent); }

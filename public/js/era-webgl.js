@@ -3,7 +3,7 @@
 // happens once the section is near; main.js catches any failure and leaves the CSS backdrop.
 import { whileVisible } from './lib/observe.js';
 
-const GREEN = 0x2fa44f;
+const GREEN = 0x43e07a;
 const PINK = 0xe8b7b0;
 const RADIUS = 3;
 
@@ -167,14 +167,14 @@ function makeCardTexture(THREE, title, role, accent) {
   const c = document.createElement('canvas');
   c.width = W; c.height = H;
   const ctx = c.getContext('2d');
-  ctx.fillStyle = '#0b0d14';
+  ctx.fillStyle = '#08331f';
   ctx.fillRect(0, 0, W, H);
-  ctx.strokeStyle = '#2a2e3a';
+  ctx.strokeStyle = '#1f5d45';
   ctx.lineWidth = 2;
   ctx.strokeRect(1, 1, W - 2, H - 2);
 
   // Title, wrapped by hand: canvas has no text layout.
-  ctx.fillStyle = '#e6e8ee';
+  ctx.fillStyle = '#e9fff3';
   ctx.font = '500 46px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
   ctx.textBaseline = 'top';
   const lines = [];
@@ -192,7 +192,7 @@ function makeCardTexture(THREE, title, role, accent) {
   ctx.fillRect(pad, under, 72, 3);
 
   if (role) {
-    ctx.fillStyle = '#8b90a0';
+    ctx.fillStyle = '#93c9ad';
     ctx.font = '24px ui-monospace, "SF Mono", Menlo, Consolas, monospace';
     ctx.fillText(role, pad, H - pad - 24);
   }
