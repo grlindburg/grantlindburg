@@ -254,6 +254,7 @@ canvas { display: block; }
 .footer { padding: clamp(3rem, 8vh, 6rem) var(--gutter); border-top: 1px solid var(--rule); }
 .footer__inner { max-width: 72rem; margin: 0 auto; display: grid; gap: 1.25rem; }
 .footer__cta { font-family: var(--font-serif); font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.25; max-width: 30ch; text-wrap: balance; }
+.footer__reach { font-size: 0.65em; white-space: nowrap; }
 .footer__links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; font-size: 0.95rem; }
 .footer__meta { color: var(--ink-soft); font-size: 0.9rem; }
 
