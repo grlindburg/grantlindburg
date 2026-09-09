@@ -1,0 +1,67 @@
+/* webgl dialect: star-black, garden green + path-pink only.
+   Signature effect: the Three.js stage (a ring of project cards seen from the air). */
+[data-dialect="webgl"] {
+  --era-bg: #06070c;
+  --era-fg: #e6e8ee;
+  --era-muted: #8b90a0;
+  --era-accent: #2fa44f;
+  --era-rule: #23262f;
+  --pink: #e8b7b0;
+  --font-display: var(--font-sans);
+  --font-body: var(--font-sans);
+  --card-radius: 6px;
+  --card-border: 1px solid var(--era-rule);
+  --card-bg: #0b0d14;
+}
+
+[data-dialect="webgl"] .era__title { letter-spacing: -0.03em; }
+[data-dialect="webgl"] .era__years { color: var(--pink); }
+[data-dialect="webgl"] .era__lesson { border-top-color: var(--era-rule); }
+
+/* stage: reserves its box before Three loads; the CSS backdrop is the no-JS/no-CDN look */
+[data-dialect="webgl"] .stage {
+  position: relative;
+  margin-top: 2.5rem;
+  width: 100%;              /* definite width: min-height must not transfer into a min-width */
+  aspect-ratio: 16 / 9;
+  max-height: 70vh;
+  min-height: 18rem;
+  border: 1px solid var(--era-rule);
+  border-radius: 6px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 58%, transparent 0 21%, rgba(232, 183, 176, 0.22) 21.5% 22.5%, transparent 23%),
+    radial-gradient(ellipse 34% 30% at 50% 58%, rgba(47, 164, 79, 0.16), transparent 70%),
+    radial-gradient(circle at 50% 58%, transparent 0 38%, rgba(47, 164, 79, 0.14) 38.5% 39.5%, transparent 40%),
+    #06070c;
+}
+[data-dialect="webgl"] .stage[data-mounted] { background: #06070c; }
+[data-dialect="webgl"] .stage canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  touch-action: pan-y;
+}
+[data-dialect="webgl"] .stage__hint {
+  position: absolute; left: 1rem; bottom: 0.9rem; z-index: 1;
+  display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--era-fg);
+  pointer-events: none;
+}
+[data-dialect="webgl"] .stage__hint a {
+  pointer-events: auto;
+  padding: 0.3rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(6, 7, 12, 0.72);
+  text-decoration-color: var(--pink);
+}
+[data-dialect="webgl"] .stage__hint a:hover { text-decoration-color: var(--era-accent); }
+
+/* cards: quiet; the stage drives the only highlight */
+[data-dialect="webgl"] .card__title { font-weight: 500; }
+[data-dialect="webgl"] .card__stack li { border-color: var(--era-rule); }
+[data-dialect="webgl"] .card[data-active] { border-color: var(--pink); }
+[data-dialect="webgl"] .card[data-active] .card__title { color: var(--pink); }
