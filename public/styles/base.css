@@ -147,7 +147,7 @@ canvas { display: block; }
 .index__list li[data-strata="editorial"] { --dot: var(--strata-editorial); box-shadow: none; }
 .index__list li[data-strata="editorial"]::before { border: 1px solid var(--ink); }
 .index__list li[data-strata="terminal"] { --dot: var(--strata-terminal); }
-.index__home { display: none; --dot: var(--ink); }
+.index__home { display: none; --dot: var(--paper); }
 
 @media (min-width: 60rem) {
   :root { --rail: 3.5rem; }
@@ -173,9 +173,12 @@ canvas { display: block; }
     transition: filter 200ms ease;
   }
   .index__list li[data-strata="editorial"] a { --seg-fg: var(--ink); border-bottom: 1px solid var(--rule); border-top: 1px solid var(--rule); }
+  .index__home a { --dot: var(--paper); --seg-fg: var(--ink); border-bottom: 1px solid var(--rule); }
   .index__list a:hover, .index__list a[aria-current="true"] { filter: brightness(1.35); }
   .index__list li[data-strata="editorial"] a:hover,
-  .index__list li[data-strata="editorial"] a[aria-current="true"] { filter: none; background: var(--paper-deep); }
+  .index__list li[data-strata="editorial"] a[aria-current="true"],
+  .index__home a:hover,
+  .index__home a[aria-current="true"] { filter: none; background: var(--paper-deep); }
   .index__years {
     writing-mode: vertical-rl; transform: rotate(180deg);
     font-size: 0.8rem; color: inherit; letter-spacing: 0.04em; opacity: 0.75;
