@@ -26,6 +26,7 @@ test('GET / serves the rendered home page', async () => {
   }
   for (const group of site.person.skills) assert.ok(html.includes(group.label), `skill group "${group.label}"`);
   assert.ok(html.includes(site.person.education.school), 'education rendered');
+  assert.match(html, /footer__cta">[^<]*<a href="mailto:russell@grantlindburg\.com"/);
   assert.match(html, /<script type="application\/ld\+json">/);
   assert.match(html, /property="og:title"/);
   assert.match(html, /id="site-data"/);

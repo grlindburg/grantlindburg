@@ -164,10 +164,11 @@ async function renderEra(era, i) {
 
 function renderFooter(site) {
   const { person } = site;
+  const email = person.footerEmail ?? person.email;
   return `
 <footer class="footer">
   <div class="footer__inner">
-    <p class="footer__cta">Building something with real systems behind it? <a href="mailto:${e(person.email)}">${e(person.email)}</a></p>
+    <p class="footer__cta">Building something with real systems behind it? <a href="mailto:${e(email)}">${e(email)}</a></p>
     <nav class="footer__links" aria-label="Profiles">${renderLinks(person.links, 'footer__link')}</nav>
     <p class="footer__meta">${e(person.shortName ?? person.name)}, ${e(person.location ?? '')}. <a href="#top">Back to top</a></p>
   </div>
